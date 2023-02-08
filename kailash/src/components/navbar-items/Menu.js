@@ -1,7 +1,7 @@
 const Menu = () => {
 	return (
 		<>
-			<p>Menu</p>
+			<p>HOME</p>
 		</>
 	);
 };

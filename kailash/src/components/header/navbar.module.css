@@ -1,13 +1,18 @@
 .header {
 	margin: auto;
-	padding: 2rem;
+	padding: 1rem;
 	display: flex;
+	position: sticky;
+	top: 0;
+	height: 60px;
 }
 
 .header nav {
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
+	border-bottom: 0.5px solid black;
+	flex-wrap: wrap;
 }
 .list {
 	display: flex;
@@ -28,6 +33,9 @@
 .menu {
 	flex-basis: 20%;
 	text-align: center;
+}
+.menu p {
+	font-size: large;
 }
 .label {
 	flex-basis: 40%;

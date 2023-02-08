@@ -7,7 +7,7 @@ import Pricing from "../navbar-items/Pricing";
 import classes from "./navbar.module.css";
 
 // route imports
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // main navigation
 const MainNavigation = () => {
@@ -16,7 +16,15 @@ const MainNavigation = () => {
 			<nav>
 				<ul className={classes.list}>
 					<li className={classes.menu}>
-						<Menu />
+						<NavLink
+							end
+							to="/"
+							className={({ isActive }) =>
+								isActive ? classes.active : undefined
+							}
+						>
+							<Menu />
+						</NavLink>
 					</li>
 					<li className={classes.label}>
 						<Label />
@@ -24,9 +32,10 @@ const MainNavigation = () => {
 					<li className={classes.routes}>
 						<NavLink
 							className={({ isActive }) =>
-								isActive ? classes.isActive : undefined
+								isActive ? classes.active : undefined
 							}
 							to="myWork"
+							end
 						>
 							<MyWork />
 						</NavLink>
@@ -34,7 +43,7 @@ const MainNavigation = () => {
 					<li className={classes.routes}>
 						<NavLink
 							className={({ isActive }) =>
-								isActive ? classes.isActive : undefined
+								isActive ? classes.active : undefined
 							}
 							to="pricing"
 						>
@@ -44,7 +53,7 @@ const MainNavigation = () => {
 					<li className={classes.routes}>
 						<NavLink
 							className={({ isActive }) =>
-								isActive ? classes.isActive : undefined
+								isActive ? classes.active : undefined
 							}
 							to="aboutUs"
 						>

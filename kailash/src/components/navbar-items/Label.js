@@ -1,7 +1,7 @@
 const Label = () => {
 	return (
 		<div>
-			<p>Label</p>
+			<p>Kailash PhotoGraphy</p>
 		</div>
 	);
 };
