@@ -5,51 +5,66 @@ import classes from "./imageSlider.module.css";
 const ImageSlider = ({ image }) => {
 	// usestate for index
 	const [imageIndex, setImageIndex] = useState(0);
+	// transitioning
+	const [isTransitioning, setTransition] = useState(false);
 	// store the img in an array
 	const slides = [image.img1, image.img2, image.img3];
 
 	// render next image every 6 sec and clearOut interval
 	useEffect(() => {
 		const intervalTime = setInterval(() => {
-			setImageIndex((imageIndex + 1) % slides.length);
+			setTransition(true);
+			setTimeout(() => {
+				setTransition(false);
+				setImageIndex((imageIndex + 1) % slides.length);
+			}, 500);
 		}, 6000);
 
 		return () => clearInterval(intervalTime);
 	}, [imageIndex]);
 
+	// navigate butoons
+
+	const previousBtn = () => {
+		if (imageIndex === 0) {
+			return;
+		}
+		setImageIndex(imageIndex - 1);
+	};
+
+	const nextBtn = () => {
+		if (imageIndex === slides.length - 1) {
+			return;
+		}
+		setImageIndex(imageIndex + 1);
+	};
+
 	// return current image
 	return (
 		<div className={classes.imageSlider}>
-			<img src={slides[imageIndex]}></img>
+			<div className={classes.previousBtn}>
+				<button onClick={previousBtn}>PREVIOUS</button>
+			</div>
+			<div className={classes.slides}>
+				<img
+					style={{
+						transform: isTransitioning ? "translateX(-100%)" : "translateX(0)",
+					}}
+					src={slides[imageIndex]}
+				></img>
+				<p>
+					"There is no one who loves pain itself,
+					<br />
+					who seeks after it <br />
+					and wants to have it, simply because it is pain..."
+				</p>
+			</div>
+
+			<div className={nextBtn}>
+				<button onClick={nextBtn}> NEXT</button>
+			</div>
 		</div>
 	);
 };
-
-// const ImageSlider = props => {
-// 	const { images } = props;
-
-// 	// state to keep track of the current slide
-// 	const [currentSlide, setCurrentSlide] = useState(0);
-
-// 	// use setInterval to advance to the next slide after a specified interval
-// 	useEffect(() => {
-// 		const intervalId = setInterval(() => {
-// 			setCurrentSlide((currentSlide + 1) % images.length);
-// 		}, 3000);
-// 		return () => clearInterval(intervalId);
-// 	}, [currentSlide, images.length]);
-
-// 	return (
-// 		<div>
-// 			{images.map((image, index) => (
-// 				<img
-// 					key={index}
-// 					src={image[`img${currentSlide + 1}`]}
-// 					// className={index === currentSlide ? classes.active : classes.inactive}
-// 				/>
-// 			))}
-// 		</div>
-// 	);
-// };
 
 export default ImageSlider;

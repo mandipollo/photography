@@ -19,6 +19,7 @@ const Caraousel = () => {
 	return (
 		<div className={classes.caraousel}>
 			{/* image slider component with images as prop */}
+
 			<ImageSlider image={images} />
 		</div>
 	);
