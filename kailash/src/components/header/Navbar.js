@@ -7,7 +7,7 @@ import Pricing from "../navbar-items/Pricing";
 import classes from "./navbar.module.css";
 
 // route imports
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // main navigation
 const MainNavigation = () => {

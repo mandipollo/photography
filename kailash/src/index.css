@@ -3,3 +3,8 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	font-family: "DM Serif Display", serif;
+	font-family: "Source Sans Pro", sans-serif;
+}
