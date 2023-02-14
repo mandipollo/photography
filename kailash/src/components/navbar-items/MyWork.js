@@ -1,9 +1,5 @@
 const MyWork = () => {
-	return (
-		<>
-			<p>My Works</p>
-		</>
-	);
+	return <div>My Portfolio</div>;
 };
 
 export default MyWork;

@@ -2,9 +2,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Root from "./pages/Root";
-import Portfolio from "./pages/Portfolio";
+import Portfolio, { loader as portfolioLoader } from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import AboutUs from "./pages/AboutUs";
+
+//loader
 
 import "./App.css";
 
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
 			{
 				path: "myWork",
 				element: <Portfolio />,
+				loader: portfolioLoader,
 			},
 			{
 				path: "pricing",

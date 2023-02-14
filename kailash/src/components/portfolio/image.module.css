@@ -1,0 +1,11 @@
+.image {
+	display: flex;
+	justify-content: center;
+	height: 50vh;
+	overflow: hidden;
+}
+
+.image img {
+	object-fit: contain;
+	width: 100%;
+}
