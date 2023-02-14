@@ -18,7 +18,7 @@ const ImageSlider = ({ image }) => {
 				setTransition(false);
 				setImageIndex((imageIndex + 1) % slides.length);
 			}, 500);
-		}, 6000);
+		}, 5000);
 
 		return () => clearInterval(intervalTime);
 	}, [imageIndex]);
@@ -46,21 +46,27 @@ const ImageSlider = ({ image }) => {
 				<button onClick={previousBtn}>PREVIOUS</button>
 			</div>
 			<div className={classes.slides}>
-				<img
-					style={{
-						transform: isTransitioning ? "translateX(-100%)" : "translateX(0)",
-					}}
-					src={slides[imageIndex]}
-				></img>
-				<p>
-					"There is no one who loves pain itself,
-					<br />
-					who seeks after it <br />
-					and wants to have it, simply because it is pain..."
-				</p>
+				<div>
+					<img
+						style={{
+							transform: isTransitioning
+								? "translateX(-100%)"
+								: "translateX(0)",
+						}}
+						src={slides[imageIndex]}
+					></img>
+				</div>
+				<div className={classes.quote}>
+					<p>
+						"There is no one who loves pain itself,
+						<br />
+						who seeks after it <br />
+						and wants to have it, simply because it is pain..."
+					</p>
+				</div>
 			</div>
 
-			<div className={nextBtn}>
+			<div className={classes.nextBtn}>
 				<button onClick={nextBtn}> NEXT</button>
 			</div>
 		</div>
