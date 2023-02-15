@@ -16,7 +16,7 @@ export default Portfolio;
 // laoder function for portfolio page
 export const loader = async () => {
 	const response = await fetch(
-		`https://api.unsplash.com/photos/random/?client_id=IW_HTXKDFTwcPm8FqldBEdNOMCwabapucayEwxDYm2s`
+		`https://api.unsplash.com/photos/random?count=10&client_id=IW_HTXKDFTwcPm8FqldBEdNOMCwabapucayEwxDYm2s`
 	);
 	if (!response.ok) {
 		throw new Error(`fetch invalid!!`);

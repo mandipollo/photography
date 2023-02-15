@@ -1,11 +1,34 @@
 .image {
 	display: flex;
 	justify-content: center;
-	height: 50vh;
+	height: 100vh;
 	overflow: hidden;
+	flex-direction: row;
+	overflow: auto;
 }
 
-.image img {
-	object-fit: contain;
+.imageDiv {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 20%;
+	min-height: 20%;
+	max-height: 80%;
+	max-width: 100%;
+}
+
+.image ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+.image ul li {
+	padding: 1rem;
+}
+
+.imageDiv img {
+	object-fit: cover;
 	width: 100%;
+	height: 100%;
 }
