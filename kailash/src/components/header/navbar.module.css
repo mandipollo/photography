@@ -34,14 +34,17 @@
 
 .menu {
 	flex-basis: 20%;
-	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 .menu p {
 	font-size: large;
 }
 .label {
 	flex-basis: 40%;
-	text-align: center;
+	align-items: center;
+	justify-content: center;
+	display: flex;
 }
 
 .routes {

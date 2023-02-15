@@ -8,19 +8,19 @@ import img3 from "../../assets/img3.jpeg";
 // slider component
 import ImageSlider from "./ImageSlider";
 
-const Caraousel = () => {
+const Caraousel = props => {
 	// array of image in an object
-	const images = {
-		img1,
-		img2,
-		img3,
-	};
+	// const images = {
+	// 	img1,
+	// 	img2,
+	// 	img3,
+	// };
 
 	return (
 		<div className={classes.caraousel}>
 			{/* image slider component with images as prop */}
 
-			<ImageSlider image={images} />
+			<ImageSlider image={props.data} />
 		</div>
 	);
 };

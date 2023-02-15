@@ -8,7 +8,8 @@ const ImageSlider = ({ image }) => {
 	// transitioning
 	const [isTransitioning, setTransition] = useState(false);
 	// store the img in an array
-	const slides = [image.img1, image.img2, image.img3];
+	// const slides = [image.img1, image.img2, image.img3];
+	const slides = image.map(data => data.urls.regular);
 
 	// render next image every 6 sec and clearOut interval
 	useEffect(() => {
