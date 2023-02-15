@@ -4,9 +4,17 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	background-color: aliceblue;
 	height: 100%;
 	flex-direction: row;
+}
+.imageSlider button {
+	border-radius: 1rem;
+	border: none;
+	padding: 1rem;
+	background-color: #f9b208;
+}
+.imageSlider button:hover {
+	background-color: #ffc93c;
 }
 
 .slides {

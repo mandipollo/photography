@@ -1,7 +1,9 @@
+import classes from "./label.module.css";
+
 const Label = () => {
 	return (
 		<div>
-			<p>Kailash PhotoGraphy</p>
+			<p className={classes.label}>Kailash PhotoGraphy</p>
 		</div>
 	);
 };

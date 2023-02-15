@@ -16,8 +16,9 @@
 }
 .list {
 	display: flex;
-	gap: 1rem;
 	text-align: center;
+	justify-content: center;
+	max-height: 80px;
 }
 
 .list a {

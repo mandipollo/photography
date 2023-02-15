@@ -6,8 +6,6 @@ import Portfolio, { loader as portfolioLoader } from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import AboutUs from "./pages/AboutUs";
 
-//loader
-
 import "./App.css";
 
 const router = createBrowserRouter([
