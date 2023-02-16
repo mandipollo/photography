@@ -7,7 +7,7 @@ const Image = props => {
 			<ul>
 				{props.data.map(image => (
 					<li className={classes.imageDiv} key={image.id}>
-						<img src={image.urls.regular} alt={image.alt}></img>
+						<img src={image.urls.regular} alt={image.alt_description}></img>
 						<p>{image.alt}</p>
 					</li>
 				))}

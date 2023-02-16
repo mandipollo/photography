@@ -22,7 +22,6 @@ export const loader = async () => {
 		throw new Error(`fetch invalid!!`);
 	}
 	const data = await response.json();
-	console.log(data);
 
 	return data;
 };

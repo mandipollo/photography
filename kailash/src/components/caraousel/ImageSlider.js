@@ -5,11 +5,15 @@ import classes from "./imageSlider.module.css";
 const ImageSlider = ({ image }) => {
 	// usestate for index
 	const [imageIndex, setImageIndex] = useState(0);
+
+	const [descriptionIndex, setDescription] = useState(0);
 	// transitioning
 	const [isTransitioning, setTransition] = useState(false);
 	// store the img in an array
-	// const slides = [image.img1, image.img2, image.img3];
 	const slides = image.map(data => data.urls.regular);
+
+	// store the alt description for the image
+	const description = image.map(descr => descr.alt_description);
 
 	// render next image every 6 sec and clearOut interval
 	useEffect(() => {
@@ -18,11 +22,12 @@ const ImageSlider = ({ image }) => {
 			setTimeout(() => {
 				setTransition(false);
 				setImageIndex((imageIndex + 1) % slides.length);
+				setDescription((descriptionIndex + 1) % description.length);
 			}, 500);
 		}, 5000);
 
 		return () => clearInterval(intervalTime);
-	}, [imageIndex]);
+	}, [imageIndex, descriptionIndex, slides.length, description.length]);
 
 	// navigate butoons
 
@@ -49,6 +54,7 @@ const ImageSlider = ({ image }) => {
 			<div className={classes.slides}>
 				<div>
 					<img
+						alt={description[descriptionIndex]}
 						style={{
 							transform: isTransitioning
 								? "translateX(-100%)"
@@ -58,12 +64,7 @@ const ImageSlider = ({ image }) => {
 					></img>
 				</div>
 				<div className={classes.quote}>
-					<p>
-						"There is no one who loves pain itself,
-						<br />
-						who seeks after it <br />
-						and wants to have it, simply because it is pain..."
-					</p>
+					<p>{description[descriptionIndex]}</p>
 				</div>
 			</div>
 
