@@ -1,6 +1,6 @@
 // router imports
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage, { loader as homepageLoader } from "./pages/HomePage";
+import HomePage, { homepageLoader } from "./pages/HomePage";
 import Root from "./pages/Root";
 import Portfolio, { loader as portfolioLoader } from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";

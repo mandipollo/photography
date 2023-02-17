@@ -21,6 +21,7 @@
 .text {
 	font-size: 3rem;
 	text-align: center;
+	color: #6b728e;
 }
 
 /* image div container*/
@@ -35,6 +36,19 @@
 	border-right: 0.5px solid #f9b208;
 }
 
+.imageContainer {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+}
+.intro {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 1rem;
+	font-size: 20px;
+}
 /* style image*/
 .pictures img {
 	object-fit: contain;

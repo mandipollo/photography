@@ -34,13 +34,29 @@ const Landing = () => {
 
 			{/* div2}*/}
 			<div className={classes.img}>
-				<img alt="a bride checking herself in the mirror" src={img1}></img>
-				<p>
-					"There is no one who loves pain itself,
-					<br />
-					who seeks after it <br />
-					and wants to have it, simply because it is pain..."
-				</p>
+				<div className={classes.imageContainer}>
+					<img alt="a bride checking herself in the mirror" src={img1}></img>
+				</div>
+				<div className={classes.intro}>
+					<p>
+						Hi there!
+						<br /> I'm a photographer with a passion for capturing stunning
+						images that tell a story. With years of experience behind the
+						camera, I've honed my skills to create visually striking images that
+						leave a lasting impression. Whether it's capturing the perfect
+						moment at a wedding, documenting the beauty of nature, or shooting
+						editorial images for a publication, I bring a creative eye and
+						technical expertise to every shoot.
+						<br /> <br />
+						On my website, you'll find a curated selection of my best work, from
+						breathtaking landscapes to intimate portraits. Each image is
+						carefully crafted to showcase the unique beauty and personality of
+						my
+						<br />
+						subjects, and I strive to create a comfortable and collaborative
+						environment during every shoot.
+					</p>
+				</div>
 			</div>
 		</div>
 	);

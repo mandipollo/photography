@@ -2,13 +2,25 @@ import Landing from "../components/content/Landing";
 import Caraousel from "../components/caraousel/Caraousel";
 
 import { useLoaderData } from "react-router-dom";
+import Testimonials from "../components/testimonials/Testimonials";
 
 const HomePage = () => {
 	const data = useLoaderData();
+
 	return (
 		<>
 			<Landing />
-			<Caraousel data={data} />
+			{data ? (
+				<Caraousel data={data} />
+			) : (
+				[] && (
+					<p style={{ textAlign: `center`, fontSize: `4rem`, color: `red` }}>
+						Couldn't fetch the Carousel.
+					</p>
+				)
+			)}
+
+			<Testimonials />
 		</>
 	);
 };
@@ -16,7 +28,7 @@ const HomePage = () => {
 export default HomePage;
 
 // fetch data from unsplash api
-export const loader = async () => {
+export const homepageLoader = async () => {
 	const response = await fetch(
 		`https://api.unsplash.com/photos/random?count=10&client_id=IW_HTXKDFTwcPm8FqldBEdNOMCwabapucayEwxDYm2s`
 	);
@@ -29,3 +41,5 @@ export const loader = async () => {
 
 	return data;
 };
+
+// fetch portrait photos from unsplash api
