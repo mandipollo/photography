@@ -19,7 +19,7 @@ const Landing = () => {
 				const nextIndex = (index + 1) % words.length;
 				setWords(words[nextIndex]);
 			}, 500);
-		}, 2000);
+		}, 1000);
 
 		return () => clearInterval(intervalTimer);
 	}, [wordsUsed, words]);

@@ -5,13 +5,15 @@
 	position: sticky;
 	top: 0;
 	height: 80px;
+	background-color: #6b728e;
+	z-index: 1;
 }
 
 .header nav {
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
-	border-bottom: 0.5px solid black;
+
 	flex-wrap: wrap;
 }
 .list {
@@ -29,7 +31,7 @@
 .list a:hover,
 .list a.active {
 	color: var(--color-primary-800);
-	text-decoration: underline;
+	text-decoration: underline #f9b208 1px;
 }
 
 .menu {

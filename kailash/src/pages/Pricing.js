@@ -1,7 +1,9 @@
+import Services from "../components/services/Services";
+
 const Pricing = () => {
 	return (
 		<>
-			<p>Pricing</p>
+			<Services />
 		</>
 	);
 };
